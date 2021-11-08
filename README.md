@@ -1,29 +1,27 @@
-# OnlineExamination
+# OnlineExam
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This is a project I completed in December 2020 as a part of a group with:
 
-## Development server
+- [Nandini Sharma](https://github.com/Nandini0810)
+- [Aniket Surve](https://github.com/Aniket461)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Description
 
-## Code scaffolding
+This is a web platform for taking Objective type technical entrance exams available for different companies under one umbrella. The exam is graded automatically and maintains a dashboard to trach student's progress. On the other hand, it gives the respective exam owners to view and filter the results based on marks, location etc. of the exam and make the best pick suited for an opening
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Features
 
-## Build
+* Login/ Registration.
+<img src="images/login.png" width="400">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Student Dashboard.
+<img src="images/dashboard.png" width="400">
 
-## Running unit tests
+* Test Interface.
+<img src="images/test.png" width="400">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Result Page and Download option.
+<img src="images/result.png" width="400">
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# Angular-Online-Exam" 
-"# Angular-Online-Exam" 
+* Filter Results.
+<img src="images/filter.png" width="400">

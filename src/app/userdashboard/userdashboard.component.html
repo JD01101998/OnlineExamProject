@@ -1,0 +1,137 @@
+<div class="main">
+
+  <div class="" style=" text-align: center;margin-left:10%; width: 90%;">
+      <div class="row">
+         
+           <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Bootstrap Sidebar</h3>
+                </div>
+                <img src="../../assets/images/logo.png" alt="" height="130" width="130" style="margin-bottom: 10;">
+                <ul class="list-unstyled components" style="margin-top: 30px;">
+                  <li style="color: black; font-size: 16px; margin-bottom: 20px;"><a style="text-decoration: none; color: purple;" ><span class="glyphicon glyphicon-user" style="margin-right: 2px;"></span> {{name}}</a></li>
+
+                    <li class="dashli">
+                        <a href="/company"><span class="glyphicon glyphicon-pencil	
+                          "></span>   Take Test</a>
+                    </li>
+                    
+                    
+                    <li class="dashli">
+                        <a href="/aboutus"><span class="glyphicon glyphicon-phone-alt	
+                          "></span>  About Us</a>
+                    </li>
+                    <li class="dashli">
+                      <a href="" (click)="logout()"><span class="glyphicon glyphicon-off	
+                        "></span>  Logout</a>
+                  </li>
+                </ul>
+            </nav>
+
+          <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4" style="width: 70%; margin-left: 20%;">
+              <div class="regform" style="
+              font-size: 20px;">
+                Search by Exam Name
+                <select class="browser-default custom-select" [(ngModel)]="selectedValue" name="sel">  
+                  <option value=All class="">All</option>
+                  <option *ngFor="let r of reportlist" class="">{{r}} </option>  
+              </select>
+              
+              </div>
+              <div class="regform" style="color: black; padding-left: 60px;">
+              <h1 class="h2" style="color: black;">Dashboard</h1><br><hr>
+              
+              <div class="row">
+                  <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                      <div class="card">
+                          <div class="card-body">
+
+                            <div *ngIf="report.length == 0" style="text-align: center;">
+
+                              <h3>You have not given any tests yet...</h3>
+                            </div>
+
+                              <div *ngIf="report.length != 0" class="table-responsive">
+                                  <table class="table" style="color: black;" *ngIf="selectedValue==null || selectedValue=='All'">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Exam ID</th>
+                                          <th scope="col">Company Name</th>
+                                          <th scope="col">Exam Name</th>
+                                          <th scope="col">Subject</th>
+                                          <th scope="col">Level 1 Score</th>
+                                          <th scope="col">Level 2 Score</th>
+                                          <th scope="col">Level 3 Score</th>
+                                          <th scope="col">Date</th>
+                                          
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngFor="let r of report">
+                                          <td>{{r.ExamID}}</td>
+                                          <td>{{r.CompanyName}}</td>
+                                          <td>{{r.ExamName}}</td>
+                                          <td>{{r.Subject}}</td>
+                                          <td *ngIf="r.Level1_Score != null">{{r.Level1_Score}}</td>
+                                          <td *ngIf="r.Level1_Score == null">NULL</td>
+                                          
+                                          
+                                          <td *ngIf="r.Level2_Score != null">{{r.Level2_Score}}</td>
+                                          <td *ngIf="r.Level2_Score == null">NULL</td>
+
+                                          <td *ngIf="r.Level3_Score != null">{{r.Level3_Score}}</td>
+                                          <td *ngIf="r.Level3_Score == null">NULL</td>
+                                          <td>{{r.Date | date: 'dd/MM/yyyy'}} </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                              </div>
+                              <div class="table-responsive" >
+                                <table class="table" *ngIf="selectedValue!=null" style="color: black;">
+                                    <thead *ngIf="selectedValue!='All'">
+                                      <tr >
+                                        <th scope="col">Exam ID</th>
+                                        <th scope="col">Company Name</th>
+                                        <th scope="col">Exam Name</th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Level 1 Score</th>
+                                        <th scope="col">Level 2 Score</th>
+                                        <th scope="col">Level 3 Score</th>
+                                        <th scope="col">Date</th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor="let r of report" >
+                                      <tr *ngIf = "selectedValue==r.ExamName">
+                                        <td>{{r.ExamID}}</td>
+                                        <td>{{r.CompanyName}}</td>
+                                        <td>{{r.ExamName}}</td>
+                                        <td>{{r.Subject}}</td>
+                                        <td *ngIf="r.Level1_Score != null">{{r.Level1_Score}}</td>
+                                        <td *ngIf="r.Level1_Score == null">NULL</td>
+                                        
+                                        
+                                        <td *ngIf="r.Level2_Score != null">{{r.Level2_Score}}</td>
+                                        <td *ngIf="r.Level2_Score == null">NULL</td>
+          
+                                        <td *ngIf="r.Level3_Score != null">{{r.Level3_Score}}</td>
+                                        <td *ngIf="r.Level3_Score == null">NULL</td>
+                                        <td>{{r.Date | date: 'dd/MM/yyyy'}} </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            
+          </main>
+
+        </div>
+      </div>
+  </div>
+</div>

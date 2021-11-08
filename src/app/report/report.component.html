@@ -1,0 +1,74 @@
+<div class="main">
+    
+    <div class="regform">
+
+        <div class="row" id="contentToConvert">
+            <div class="card-body table-responsive table-striped">
+                <div style="padding:4%">
+                    <table class="table table-hover" id="contentToConvert">
+                        <thead class="text-primary">
+                            <tr style="color: coral;">
+                                <th style="color: black;" colspan="1"><img src="../../assets/images/logo.png" alt="LOGO HERE" height="100" width="100"></th>
+                                <th style="color: black;" colspan="1" class="display-4">
+                                TEST RESULT <br>
+                                Report Number: {{report.ReportID}}
+                                </th>
+                            </tr>
+                            <tr style="color: black; background-color:honeydew"><th colspan="2">Exam Details:</th></tr>
+                            <tr>
+                                <th style="color: black;">
+                                    Date: {{report.Date | date:'dd/MM/yyy'}}
+                                    <br>
+                                    Student ID: {{report.StudentID}}
+                                    <br>
+                                    Student Email: {{name}}
+                                    <br>
+                                    Company: {{report.CompanyName}}
+                                    <br>
+                                    Test Name: {{examdetails.ExamName}}
+                                    <br>
+                                    Subject: {{examdetails.Subject}}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:left">Level No:</th>
+                                <th>Score</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr *ngIf="report.Level1_Score!=null">
+                                <td>Level 1</td>
+                                <td>{{report.Level1_Score}}</td>                                
+                            </tr>
+                            <tr *ngIf="report.Level2_Score!=null">
+                                <td>Level 2</td>
+                                <td>{{report.Level2_Score}}</td>                                
+                            </tr>
+                            <tr *ngIf="report.Level3_Score!=null">
+                                <td>Level 3</td>
+                                <td>{{report.Level3_Score}}</td>                                
+                            </tr>
+                        </tbody>
+                        <br>
+                        
+                        <p *ngIf="report.Level1_Score>4 && report.Level2_Score>5 && report.Level3_Score>4 ">Status: Cleared!</p>
+
+                    </table>
+                </div>
+                
+
+           
+ 
+</div>
+    </div>
+
+    <div style="width: 100%; text-align: right;">
+    <a href="/dashboard" (click)="nav()"><button type="submit" name="submit" class="btn btn-success">Exit Test</button></a>
+
+    &nbsp;&nbsp;&nbsp;
+      
+    <button type="button" class="pdfb" value="" (click)="captureScreen()"><span class="glyphicon glyphicon-print"></span>  Download As PDF</button>  </div>
+      
+    
+    </div>

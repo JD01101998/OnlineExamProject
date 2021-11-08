@@ -1,0 +1,29 @@
+.outer{
+   
+    background-image: url('../../assets/images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+
+.btn-dark{
+background-color:#181818;
+color:#808080;
+height:70px;
+font-size:30px;
+}
+
+div.btn-group-vertical{
+margin-left:10%;
+width:40%;
+margin-bottom:30px;
+margin-top:30px;
+}
+img{
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+   
+}

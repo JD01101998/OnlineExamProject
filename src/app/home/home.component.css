@@ -1,0 +1,94 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.outer{
+    overflow: hidden;
+    background-image: url('../../assets/images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img{
+    float: right;
+    position: relative;
+    margin-right: 1%;
+    width: 400px;
+    bottom: -35vh;
+
+}
+.banner{
+    margin-top: 5%;
+    float: right;
+    text-align: center;
+    margin-right:  -25vh;
+}
+.b1{
+    color: white;
+    font-size: 4vw;
+    font-weight: bold; 
+
+}
+.b2{
+
+    font-size: 2vw;
+    font-weight: bold;
+    margin-top: -20px;
+    color: white;
+}
+.login{
+    width:30%;
+    margin-left: 3%;
+    height: 75%;
+    float: left;
+
+    margin-top: 5%;
+    position: absolute;
+    z-index: 100;
+    background-color:rgb(238, 237, 234);
+    overflow: hidden;
+    border-radius: 30px;
+}
+.innerlogin p{
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 500;
+}
+.inform{
+    margin-top: 10%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+form label{
+    color: black;
+    font-weight: 600;
+}
+
+.but{
+    width: 110px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+}
+.but:hover{
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 1000px) {
+.banner{
+    margin-top: 5%;
+    float: right;
+    text-align: center;
+    margin-right:  -45vh;
+   
+}
+.login{
+    width: 35%;
+    height: 90%;
+}
+.b2{
+    margin-top: -20px;
+}
+}

@@ -1,0 +1,149 @@
+<div class="outer">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">RANJ-Shaping Futures</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="../adminhome"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a routerLink="../home" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+     
+        </ul>
+    
+      </div>
+    </nav>
+  <div class="flex-container">
+    <div class="button">
+      <button class="btn" id="b1" (click)="c1()"><b>ADD FILES TO EXISTING EXAM</b></button>
+      <button class="btn" id="b2" (click)="c2()"><b>ADD FILES TO NEW EXAM</b></button>
+    </div>
+    <form *ngIf="a" (ngSubmit)="submitFile()" [formGroup]="addForm">
+      <div class="l1">
+        <div class="form-group">
+          <label for="filePath">Enter File Path :</label>
+          <input type="text" id="filePath" name="filePath" class="form-control" formControlName="filePath" placeholder="eg. C\Users\admin\abc.csv">
+          <span *ngIf="filePath.errors && filePath.touched">
+            <span *ngIf="filePath.errors.required">Required</span>
+          </span>
+  
+        </div>
+      </div>
+      <div class="l1">
+      <div class="form-group">
+        <label for="company">Enter Company Name :</label>
+        <select (change)="fetchexam()" id="company" name="company" class="form-control" formControlName="company" >
+          <option *ngFor="let c of cname" value="{{c}}">{{c}}</option>
+          
+          
+        </select>
+        <span *ngIf="company.errors && company.touched">
+          <span *ngIf="company.errors.required">Required</span>
+        </span>
+       
+      </div>
+  </div>
+  <div class="l1">
+    <div class="form-group">
+      <label for="eexam">Enter Exam Name :</label>
+      <select id="eexam" name="eexam" class="form-control" formControlName="eexam">
+        <option *ngFor="let e of exams" value="{{e.ExamID}}">{{e.ExamName}}</option>
+        
+        
+      </select>
+      <span *ngIf="eexam.errors && eexam.touched">
+        <span *ngIf="eexam.errors.required">Required</span>
+      </span>
+    </div>
+  </div>
+  <div class="l1">
+    <div class="form-group">
+      <label for="level">Enter Level :</label>
+      <select id="level" name="level" class="form-control" formControlName="level">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        
+        
+      </select>
+      <span *ngIf="level.errors && level.touched">
+        <span *ngIf="level.errors.required">Required</span>
+      </span>
+    </div>
+  </div>
+  <br>
+  <button class="btn" type="submit">Submit</button>
+  </form>
+  <form *ngIf="b" [formGroup]="addNew" (ngSubmit)="submitnewfile()">
+    <div class="l1">
+      <div class="form-group">
+        <label for="filePath">Enter File Path for Level 1:</label>
+        <input type="text" id="filePath" name="filePath" class="form-control" formControlName="filePath1" placeholder="eg. C\Users\admin\abc.csv">
+        <span *ngIf="filePath1.errors && filePath1.touched">
+          <span *ngIf="filePath1.errors.required">Required</span>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="l1">
+      <div class="form-group">
+        <label for="filePath">Enter File Path for Level 2:</label>
+        <input type="text" id="filePath" name="filePath" class="form-control" formControlName="filePath2" placeholder="eg. C\Users\admin\abc.csv">
+        <span *ngIf="filePath2.errors && filePath2.touched">
+          <span *ngIf="filePath2.errors.required">Required</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="l1">
+      <div class="form-group">
+        <label for="filePath">Enter File Path for Level 3 :</label>
+        <input type="text" id="filePath" name="filePath" class="form-control" formControlName="filePath3" placeholder="eg. C\Users\admin\abc.csv">
+        <span *ngIf="filePath3.errors && filePath3.touched">
+          <span *ngIf="filePath3.errors.required">Required</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="l1">
+    <div class="form-group">
+      <label for="company">Enter Company Name :</label>
+      <select id="company" name="company" class="form-control" formControlName="company1" >
+        <option *ngFor="let c of cname" value="{{c}}">{{c}}</option>
+        
+        
+      </select>
+      <span *ngIf="company1.errors && company1.touched">
+        <span *ngIf="company1.errors.required">Required</span>
+      </span>
+    </div>
+  </div>
+  <div class="l1">
+  <div class="form-group">
+    <label for="eexam">Enter Exam Name :</label>
+    
+    <input class="form-control" type="text" id="eexam" name="eexam" formControlName="eexam1">
+    <span *ngIf="eexam1.errors && eexam1.touched">
+      <span *ngIf="eexam1.errors.required">Required</span>
+    </span>
+  </div>
+  </div>
+  <div class="l1">
+    <div class="form-group">
+      <label for="subject">Choose a Subject :</label>
+      <select id="subject" name="subject" class="form-control" formControlName="subject">
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="C#">C#</option>
+        <option value="SQL">SQL</option>
+        
+      </select>
+      <span *ngIf="subject.errors && subject.touched">
+        <span *ngIf="subject.errors.required">Required</span>
+      </span>
+    </div>
+  </div>
+  
+  <br>
+  <button class="btn" type="submit">Submit</button>
+  </form>

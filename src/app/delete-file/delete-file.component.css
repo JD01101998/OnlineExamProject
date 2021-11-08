@@ -1,0 +1,27 @@
+.outer{
+    background-image: url('../../assets/images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    }
+    #b1{
+        background-color:#181818;
+        color:#808080;
+        height:65px;
+        width:300px;
+        margin-left:17%;
+
+        }
+    form{
+    background-color:white;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 30px;
+    width:80vh;
+    margin-left:30%;
+    padding-bottom:1%;
+    padding-top:1%;
+    }
+    span{
+        color:red;
+    }

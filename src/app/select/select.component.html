@@ -1,0 +1,51 @@
+<div class="main">
+
+    <div class="regform">
+
+        <div style="text-align: right;">
+            <a href="/dashboard"><button style="background-color: white; color: black; height: 36px; border: 2px solid black; margin-right:-75px"><span class="glyphicon glyphicon-arrow-left"></span>  Dashboard</button></a>
+        </div>
+
+        <div style="text-align: center;">
+            <p class="cen">Welcome {{name}} <br/> <br>
+                
+                
+                Please Select a Test</p>
+        </div>
+
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1" style="font-size: 20px;">Select Company</label>
+                    <select class="browser-default custom-select" (change)="changeCompany()" formControlName="companyName">  
+                        <option value="" selected class="">Choose your Company</option>
+                        <option *ngFor="let company of companydetails" class="">{{company.CompanyName}} </option>  
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1" style="font-size: 20px;">Select Available Exams</label>
+                    <select class="browser-default custom-select" (change)="changeSubject()" formControlName="subjectName">  
+                        <option value="" selected class="form-control">Choose your Exam</option>    
+                        <option *ngFor="let subject of subjectdetails" class="form-control" style="height: 30px;">{{subject.ExamName}}</option>
+                            
+                    </select>
+                </div>
+            </div> <br>
+            
+                <!-- <button class="btn btn-warning btn-rounded btn-lg btn-block" (click)=checkExam()>check</button> -->
+            
+            <br>
+            <div style="text-align: center; ">
+            <p *ngIf="message =='T'">
+                <button type="submit" style="width: 150px;margin-left: 0%;" class="btn but2" >Submit</button>
+            </p>
+
+            <p *ngIf="message == 'F' ">
+                <span style="color: red; text-align: center; font-size: 20px;">You cannot appear for this Exam twice in span of 6 Months</span> 
+            </p>
+        </div>
+        </form>
+    </div>
+    
+</div>

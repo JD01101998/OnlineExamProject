@@ -1,0 +1,30 @@
+<div class="outer">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">RANJ-Shaping Futures</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="../adminhome"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a routerLink="../home"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+     
+        </ul>
+    
+      </div>
+    </nav>
+<form [formGroup]="delFile">
+  <div class="l1">
+    <div class="form-group">
+      <label for="file">Choose a File :</label>
+      <select id="file" name="file" class="form-control" formControlName="file">
+      <option *ngFor="let f of files" value="{{f.FileID}}">{{f.FileName}}</option>
+      
+      </select>
+      <span *ngIf="file.errors && file.touched">
+        <span *ngIf="file.errors.required">Required</span>
+      </span>
+    </div>
+  </div>
+<button (click)="deleteFile()" class="btn" id="b1"><b>DELETE</b></button>
+</form>
+</div>

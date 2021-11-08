@@ -1,0 +1,119 @@
+
+
+<div class="outer">    
+  
+  <div style="float: left;
+  width: 285px;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 17px;
+  padding-left: 13px;
+  margin-top: 25px;
+  margin-left: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  
+  box-shadow: 15px 15px rgba(0, 0, 0,0.3);
+
+  ">
+<p>User ID: {{userid}} </p>
+<p>Exam Name: {{examname}}</p> 
+</div>
+  
+    <button style="float: right;
+    width: 100px;
+    font-size: 15px;
+    height: 40px;
+    margin-right: 30px;
+    background: yellow;
+    border: 3px solid black;
+    font-weight: bold;margin-top: 30px; border-radius: 10px;" (click)='OnSubmit()' >Submit</button>
+    <div>
+        <div style="text-align: center; padding-left: 120px; font-size: 20px; color: white;"><h1 style="margin-right: 290px;">LEVEL : {{levelnumber}}</h1></div>
+        <div style="text-align: center;
+        width: 40%;
+        font-size: 25px;
+        color: white;
+        margin-left: 30%;
+        background-color: crimson;
+        height: 50px;
+        border-radius: 10px;
+        padding-top: 10px;"><i style="font-size: 30px; margin-right: 10px;" class="fa fa-clock-o" aria-hidden="true"></i><span style="margin-top: 10px;" id="demo1"></span></div>
+    </div>
+  
+    <div class="buttons">
+      
+      <div>
+          <button type="button" [class] = "clsname1" (click)='Jump(1)' >1</button>&nbsp;
+          <button type="button" [class] = "clsname2" (click)='Jump(2)'>2</button>&nbsp;
+          <button type="button" [class] = "clsname3" (click)='Jump(3)'>3</button>
+      </div>
+      <div>
+        <button type="button" [class] = "clsname4" (click)='Jump(4)'>4</button>&nbsp;
+        <button type="button" [class] = "clsname5" (click)='Jump(5)'>5</button>&nbsp;
+        <button type="button" [class] = "clsname6" (click)='Jump(6)'>6</button>
+      </div>
+  
+      <div>
+        <button type="button" [class] = "clsname7" (click)='Jump(7)'>7</button>&nbsp;
+        <button type="button" [class] = "clsname8" (click)='Jump(8)'>8</button>&nbsp;
+        <button type="button" [class] = "clsname9" (click)='Jump(9)'>9</button>
+      </div>
+      <button type="button" [class] = "clsname10" (click)='Jump(10)'>10</button>
+  
+    </div>
+    
+      <div *ngFor="let s of QuestionDetails">
+        <div *ngIf="s.Que_No == current">
+          <div class="quesno">
+            <h2><p style="float: left;">Question : &nbsp;{{s.Que_No}}&nbsp;&nbsp;</p></h2>
+              <label for='Quick' style='float: right;'>
+                <input type='checkbox' name='option' id='Quick' style='margin-right: 10px; vertical-align: middle;'
+                [attr.checked]="rem[current] === true ? 'checked' : null"  (click)='Remember()'/>
+                Remember Me</label>
+          </div>
+            <br>
+            <br>
+            <div class="questions">
+          <div class="one">
+              <h2 style="margin-bottom: 30px;">{{s.Question}}</h2>
+              <div class="block1">
+                <label for='O1' style=' padding: 5px; font-size: 1.8rem;'>
+                  <input type='radio' name='option' id='O1' style=' margin-right: 10px; vertical-align: middle; margin-top: 5px;' 
+                  [attr.checked]="AttemptedAnswer[current] === 'O1' ? 'checked' : null" (click)='check("O1")' />
+                  {{s.OP1}}</label>
+              </div>
+  
+              <div class="block1">
+                <label for='O2' style=' padding: 5px; font-size: 1.8rem;'>
+                  <input type='radio' name='option' id='O2' style=' margin-right: 10px; vertical-align: middle; margin-top: 5px;'
+                  [attr.checked]="AttemptedAnswer[current] === 'O2' ? 'checked' : null"  (click)='check("O2")'/>
+                  {{s.OP2}}</label>
+              </div>
+  
+              <div class="block1">
+                <label for='O3' style=' padding: 5px; font-size: 1.8rem;'>
+                  <input type='radio' name='option' id='O3' style=' margin-right: 10px; vertical-align: middle; margin-top: 5px;'
+                  [attr.checked]="AttemptedAnswer[current] === 'O3' ? 'checked' : null"  (click)='check("O3")'/>
+                  {{s.OP3}}</label>
+              </div>
+  
+              <div class="block1">
+                <label for='O4' style=' padding: 5px; font-size: 1.8rem;'>
+                  <input type='radio' name='option' id='O4' style=' margin-right: 10px; vertical-align: middle; margin-top: 5px;'
+                  [attr.checked]="AttemptedAnswer[current] === 'O4' ? 'checked' : null"  (click)='check("O4")'/>
+                  {{s.OP4}}</label>
+              </div>
+  
+          </div>
+        </div>
+          <div class="two" style="text-align: center;">
+              <button style="margin-right: 15px;"(click)='displayPrevious()' class="next" [disabled]="current==1">
+                <i class="fa fa-arrow-left" style="margin-right: 3px;" aria-hidden="true"></i>Previous</button>
+              <button style="margin-left: 15px;" (click)='displayNext()' class="next" [disabled]="current==10"
+              >Next<i class="fa fa-arrow-right" style="margin-left: 3px;" aria-hidden="true"></i></button>
+          </div>      
+      </div>
+    </div>
+  </div>

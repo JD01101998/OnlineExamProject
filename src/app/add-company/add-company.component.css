@@ -1,0 +1,41 @@
+.outer{
+    background-image: url('../../assets/images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: scroll;
+    height:100vh;
+    }
+form{
+    background-color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 30px;
+    width:50%;
+    margin-left: 25%;
+}
+#b1{
+    background-color:#181818;
+    color:#808080;
+    height:65px;
+    width:300px;
+    margin-left:23%;
+
+    }
+span{
+    color: red;
+}
+
+.panel{
+    width:50%;
+    margin-left: 25%;
+    border-radius: 30px;
+    margin-top: 3%;
+}
+table{
+  width:80%;
+  margin-left: 10%;
+    margin-bottom: 2%;
+    margin-top:2%;
+}

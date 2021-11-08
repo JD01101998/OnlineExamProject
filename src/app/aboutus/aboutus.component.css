@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  .outer{
+
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    height: 30%;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    color: white;
+    
+    background-image: url("../../assets/images/bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+
+  
+  .title {
+    color: grey;
+  }
+  
+.btn{
+    background-color:#181818;
+    color:#808080;
+    width:25%;
+}
